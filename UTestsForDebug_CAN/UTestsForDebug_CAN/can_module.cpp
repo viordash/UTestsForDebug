@@ -1,3 +1,5 @@
+#include "stm32f4_discovery.h"
+#include "stm32f4xx_hal.h"
 #include "main.h"
 #include "string.h"
 
@@ -28,7 +30,7 @@ void CAN_Init(bool loopback) {
 	CanHandle.Init.TimeSeg2 = CAN_BS2_2TQ;
 	CanHandle.Init.Prescaler = 6;
 
-	if (HAL_CAN_Init(&CanHandle) != HAL_OK) {
+	if(HAL_CAN_Init(&CanHandle) != HAL_OK) {
 		/* Initialization Error */
 		Error_Handler();
 	}
@@ -45,13 +47,13 @@ void CAN_Init(bool loopback) {
 	sFilterConfig.FilterActivation = ENABLE;
 	sFilterConfig.SlaveStartFilterBank = 14;
 
-	if (HAL_CAN_ConfigFilter(&CanHandle, &sFilterConfig) != HAL_OK) {
+	if(HAL_CAN_ConfigFilter(&CanHandle, &sFilterConfig) != HAL_OK) {
 		/* Filter configuration Error */
 		Error_Handler();
 	}
 
 	/*##-3- Start the CAN peripheral ###########################################*/
-	if (HAL_CAN_Start(&CanHandle) != HAL_OK) {
+	if(HAL_CAN_Start(&CanHandle) != HAL_OK) {
 		/* Start Error */
 		Error_Handler();
 	}
@@ -59,10 +61,10 @@ void CAN_Init(bool loopback) {
 
 void CAN_SendCommand(TCommandId id, uint8_t status, uint8_t *payload) {
 	CAN_TxHeaderTypeDef header;
-	TCommand command = {};
+	TCommand command = { };
 	command.Id = id;
 	command.Status = status;
-	if (payload != NULL) {
+	if(payload != NULL) {
 		memcpy(command.Payload, payload, sizeof(command.Payload));
 	}
 
@@ -74,32 +76,34 @@ void CAN_SendCommand(TCommandId id, uint8_t status, uint8_t *payload) {
 	header.TransmitGlobalTime = DISABLE;
 
 	/* Request transmission */
-	if (HAL_CAN_AddTxMessage(&CanHandle, &header, (uint8_t *)&command, &TxMailbox) != HAL_OK) {
+	if(HAL_CAN_AddTxMessage(&CanHandle, &header, (uint8_t *)&command, &TxMailbox) != HAL_OK) {
 		/* Transmission request Error */
 		Error_Handler();
 	}
 
 	/* Wait transmission complete */
-	while (HAL_CAN_GetTxMailboxesFreeLevel(&CanHandle) != 3) {
+	while(HAL_CAN_GetTxMailboxesFreeLevel(&CanHandle) != 3) {
+		BSP_LED_Toggle(LED3);
+		HAL_Delay(100);
 	}
 }
 
 bool CAN_HandleReceivingCommands(TCommandId *id, uint8_t *status, uint8_t *payload, size_t payload_size) {
 	CAN_RxHeaderTypeDef header;
-	TCommand command = {};
+	TCommand command = { };
 
 	/*##-5- Start the Reception process ########################################*/
-	if (HAL_CAN_GetRxFifoFillLevel(&CanHandle, CAN_RX_FIFO0) != 1) {
+	if(HAL_CAN_GetRxFifoFillLevel(&CanHandle, CAN_RX_FIFO0) != 1) {
 		/* Reception Missing */
 		Error_Handler();
 	}
 
-	if (HAL_CAN_GetRxMessage(&CanHandle, CAN_RX_FIFO0, &header, (uint8_t *)&command) != HAL_OK) {
+	if(HAL_CAN_GetRxMessage(&CanHandle, CAN_RX_FIFO0, &header, (uint8_t *)&command) != HAL_OK) {
 		/* Reception Error */
 		return false;
 	}
 
-	if ((header.StdId != 0x11) ||
+	if((header.StdId != 0x11) ||
 		(header.RTR != CAN_RTR_DATA) ||
 		(header.IDE != CAN_ID_STD) ||
 		(header.DLC != sizeof(command))) {
