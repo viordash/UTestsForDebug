@@ -47,7 +47,6 @@
 
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
-void LED_Display(uint8_t Ledstatus);
 
 static inline void Error_Handler(void) {
 	/* User may add here some code to deal with this error */
