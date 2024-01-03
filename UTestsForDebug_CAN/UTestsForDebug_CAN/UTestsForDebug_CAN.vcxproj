@@ -79,7 +79,6 @@
     <ClCompile Include="Src\system_stm32f4xx.c" />
     <ClCompile Include="Src\main.cpp" />
     <ClCompile Include="Src\stm32f4xx_hal_msp.c" />
-    <None Include="readme.txt" />
     <ClCompile Include="$(BSP_ROOT)\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c" />
     <ClCompile Include="$(BSP_ROOT)\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c" />
     <ClCompile Include="$(BSP_ROOT)\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_can.c" />

@@ -20,9 +20,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="readme.txt">
-      <Filter>Source files</Filter>
-    </None>
     <None Include="stm32.props">
       <Filter>Source files\Device-specific files</Filter>
     </None>
