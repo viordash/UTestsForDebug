@@ -42,7 +42,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
     <ClCompile>
-      <AdditionalIncludeDirectories>../UTestsForDebug_CAN/Inc;C:/Users/User/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/2023.07/STM32F4xxxx/BSP/STM32F4-Discovery;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../UTestsForDebug_CAN/Inc;C:/Users/User/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/2023.07/STM32F4xxxx/BSP/STM32F4-Discovery;../UTestsForDebug_CAN/BSP/STM32F4xxxx/BSP/STM32F4-Discovery;../UTestsForDebug_CAN/BSP/STM32F4xxxx/CMSIS_HAL/Device/ST/STM32F4xx/Include;../UTestsForDebug_CAN/BSP/STM32F4xxxx/CMSIS_HAL/Include;../UTestsForDebug_CAN/BSP/STM32F4xxxx/STM32F4xx_HAL_Driver/Inc;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>DEBUG=1;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalOptions />
       <CLanguageStandard />
