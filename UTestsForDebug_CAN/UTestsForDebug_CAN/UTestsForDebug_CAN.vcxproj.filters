@@ -33,9 +33,6 @@
     <ClCompile Include="Src\system_stm32f4xx.c">
       <Filter>Source files</Filter>
     </ClCompile>
-    <ClCompile Include="Src\main.c">
-      <Filter>Source files</Filter>
-    </ClCompile>
     <ClCompile Include="Src\stm32f4xx_hal_msp.c">
       <Filter>Source files</Filter>
     </ClCompile>
@@ -48,37 +45,16 @@
     <ClCompile Include="$(BSP_ROOT)\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c">
       <Filter>Source files\Shared sources</Filter>
     </ClCompile>
-    <ClCompile Include="$(BSP_ROOT)\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_fsmc.c">
-      <Filter>Source files\Shared sources</Filter>
-    </ClCompile>
     <ClCompile Include="$(BSP_ROOT)\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_can.c">
       <Filter>Source files\Shared sources</Filter>
     </ClCompile>
     <ClCompile Include="$(BSP_ROOT)\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c">
       <Filter>Source files\Shared sources</Filter>
     </ClCompile>
-    <ClCompile Include="$(BSP_ROOT)\STM32F4xxxx\BSP\STM324xG_EVAL\stm324xg_eval.c">
-      <Filter>Source files\Shared sources</Filter>
-    </ClCompile>
-    <ClCompile Include="$(BSP_ROOT)\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.c">
-      <Filter>Source files\Shared sources</Filter>
-    </ClCompile>
     <ClCompile Include="$(BSP_ROOT)\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c">
       <Filter>Source files\Shared sources</Filter>
     </ClCompile>
-    <ClCompile Include="$(BSP_ROOT)\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_sram.c">
-      <Filter>Source files\Shared sources</Filter>
-    </ClCompile>
-    <ClCompile Include="$(BSP_ROOT)\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c.c">
-      <Filter>Source files\Shared sources</Filter>
-    </ClCompile>
-    <ClCompile Include="$(BSP_ROOT)\STM32F4xxxx\BSP\STM324xG_EVAL\stm324xg_eval_io.c">
-      <Filter>Source files\Shared sources</Filter>
-    </ClCompile>
     <ClCompile Include="$(BSP_ROOT)\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c">
-      <Filter>Source files\Shared sources</Filter>
-    </ClCompile>
-    <ClCompile Include="$(BSP_ROOT)\STM32F4xxxx\BSP\Components\stmpe811\stmpe811.c">
       <Filter>Source files\Shared sources</Filter>
     </ClCompile>
     <None Include="stm32.props">
@@ -105,5 +81,20 @@
     <None Include="stm32.xml">
       <Filter>VisualGDB settings</Filter>
     </None>
+    <ClCompile Include="can_module.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="communication.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\main.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="BSP\STM32F4xxxx\BSP\STM32F4-Discovery\stm32f4_discovery.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c.c">
+      <Filter>Source files\Shared sources</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -13,9 +13,9 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{A7B4EAB0-40B4-4A97-B76B-9B873DC83D28}</ProjectGuid>
-    <BSP_ID>com.sysprogs.arm.stm32</BSP_ID>
-    <BSP_VERSION>2023.07</BSP_VERSION>
-    <InPlaceBSPSubdir />
+    <BSP_ID>com.visualgdb.bsp.in-place</BSP_ID>
+    <BSP_VERSION>1.0</BSP_VERSION>
+    <InPlaceBSPSubdir>BSP</InPlaceBSPSubdir>
     <RelativeBSPPath />
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -49,7 +49,7 @@
       <AdditionalOptions />
     </Link>
     <ClCompile>
-      <AdditionalIncludeDirectories>Inc;C:/Users/User/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/2023.07/STM32F4xxxx/CMSIS_HAL/Device/ST/STM32F4xx/Include;C:/Users/User/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/2023.07/STM32F4xxxx/STM32F4xx_HAL_Driver/Inc;C:/Users/User/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/2023.07/STM32F4xxxx/BSP/STM324xG_EVAL;C:/Users/User/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/2023.07/STM32F4xxxx/CMSIS_HAL/Include;C:/Users/User/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/2023.07/STM32F4xxxx/BSP/STM32F4-Discovery;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Inc;BSP/STM32F4xxxx/CMSIS_HAL/Device/ST/STM32F4xx/Include;BSP/STM32F4xxxx/STM32F4xx_HAL_Driver/Inc;BSP/STM32F4xxxx/BSP/STM32F4-Discovery;BSP7/STM32F4xxxx/CMSIS_HAL/Include;BSP/STM32F4xxxx/CMSIS_HAL/Include;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>DEBUG=1;USE_HAL_DRIVER;USE_STM324xG_EVAL;STM32F407xx;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalOptions />
       <CLanguageStandard />
@@ -71,8 +71,8 @@
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
   <ItemGroup>
-    <ClCompile Include="C:\Users\User\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\2023.07\STM32F4xxxx\BSP\STM32F4-Discovery\stm32f4_discovery.c" />
-    <ClCompile Include="C:\Users\User\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\2023.07\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.c" />
+    <ClCompile Include="BSP\STM32F4xxxx\BSP\STM32F4-Discovery\stm32f4_discovery.c" />
+    <ClCompile Include="BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c.c" />
     <ClCompile Include="can_module.cpp" />
     <ClCompile Include="communication.cpp" />
     <ClCompile Include="Src\stm32f4xx_it.c" />
@@ -82,15 +82,10 @@
     <None Include="readme.txt" />
     <ClCompile Include="$(BSP_ROOT)\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c" />
     <ClCompile Include="$(BSP_ROOT)\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c" />
-    <ClCompile Include="$(BSP_ROOT)\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_fsmc.c" />
     <ClCompile Include="$(BSP_ROOT)\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_can.c" />
     <ClCompile Include="$(BSP_ROOT)\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c" />
-    <ClCompile Include="$(BSP_ROOT)\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.c" />
     <ClCompile Include="$(BSP_ROOT)\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c" />
-    <ClCompile Include="$(BSP_ROOT)\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_sram.c" />
-    <ClCompile Include="$(BSP_ROOT)\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c.c" />
     <ClCompile Include="$(BSP_ROOT)\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c" />
-    <ClCompile Include="$(BSP_ROOT)\STM32F4xxxx\BSP\Components\stmpe811\stmpe811.c" />
     <None Include="stm32.props" />
     <ClCompile Include="$(BSP_ROOT)\STM32F4xxxx\StartupFiles\startup_stm32f407xx.c" />
     <ClInclude Include="Inc\main.h" />
