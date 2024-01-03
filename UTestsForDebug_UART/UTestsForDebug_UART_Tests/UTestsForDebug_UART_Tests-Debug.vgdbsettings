@@ -62,7 +62,7 @@
         <SearchInIncludeSubdirs>true</SearchInIncludeSubdirs>
       </DiscoverySettings>
       <CheckForClangFormatFiles>true</CheckForClangFormatFiles>
-      <FormattingEngine xsi:nil="true" />
+      <FormattingEngine>ClangFormat</FormattingEngine>
     </ExtraSettings>
     <CodeAnalyzerSettings>
       <Enabled>false</Enabled>

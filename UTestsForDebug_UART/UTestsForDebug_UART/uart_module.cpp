@@ -1,6 +1,6 @@
+#include "main.h"
 #include "stm32f4_discovery.h"
 #include "stm32f4xx_hal.h"
-#include "main.h"
 #include "string.h"
 
 UART_HandleTypeDef UartHandle;
@@ -32,16 +32,16 @@ void UART_Init() {
 	UartHandle.Init.Mode = UART_MODE_TX_RX;
 	UartHandle.Init.OverSampling = UART_OVERSAMPLING_16;
 
-	if(HAL_UART_Init(&UartHandle) != HAL_OK) {
+	if (HAL_UART_Init(&UartHandle) != HAL_OK) {
 		Error_Handler();
 	}
 }
 
 void UART_SendCommand(TCommandId id, uint8_t status, uint8_t *payload) {
-	TCommand command = { };
+	TCommand command = {};
 	command.Id = id;
 	command.Status = status;
-	if(payload != NULL) {
+	if (payload != NULL) {
 		memcpy(command.Payload, payload, sizeof(command.Payload));
 	}
 
@@ -50,20 +50,20 @@ void UART_SendCommand(TCommandId id, uint8_t status, uint8_t *payload) {
 	/*##-2- Start the transmission process #####################################*/
 	/* While the UART in reception process, user can transmit data through 
      "aTxBuffer" buffer */
-	if(HAL_UART_Transmit(&UartHandle, (uint8_t *)&command, sizeof(command), 5000) != HAL_OK) {
+	if (HAL_UART_Transmit(&UartHandle, (uint8_t *)&command, sizeof(command), 5000) != HAL_OK) {
 		Error_Handler();
 	}
 }
 
 bool UART_HandleReceivingCommands(TCommandId *id, uint8_t *status, uint8_t *payload, size_t payload_size) {
-	TCommand command = { };
+	TCommand command = {};
 
 	/*##-3- Put UART peripheral in reception process ###########################*/
-	if(HAL_UART_Receive(&UartHandle, (uint8_t *)&command, sizeof(command), 5000) != HAL_OK) {
+	if (HAL_UART_Receive(&UartHandle, (uint8_t *)&command, sizeof(command), 5000) != HAL_OK) {
 		BSP_LED_Toggle(LED3);
 		return false;
 	}
-	
+
 	*id = (TCommandId)command.Id;
 	*status = command.Status;
 	memcpy(payload, command.Payload, payload_size);
