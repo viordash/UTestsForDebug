@@ -60,6 +60,7 @@ bool UART_HandleReceivingCommands(TCommandId *id, uint8_t *status, uint8_t *payl
 
 	/*##-3- Put UART peripheral in reception process ###########################*/
 	if(HAL_UART_Receive(&UartHandle, (uint8_t *)&command, sizeof(command), 5000) != HAL_OK) {
+		BSP_LED_Toggle(LED3);
 		return false;
 	}
 	
