@@ -231,9 +231,6 @@
     <ClCompile Include="communication_tests.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
-    <ClCompile Include="..\UTestsForDebug_UART\uart_module.cpp">
-      <Filter>ProjectSources</Filter>
-    </ClCompile>
     <ClCompile Include="..\UTestsForDebug_UART\communication.cpp">
       <Filter>ProjectSources</Filter>
     </ClCompile>
@@ -269,6 +266,30 @@
     </ClCompile>
     <ClCompile Include="system_stm32f4xx.c">
       <Filter>Source files\Device-specific files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\AppData\Local\VisualGDB\TestFrameworks\com.sysprogs.unittest.CppUTest\src\CppUTestExt\MockActualCall.cpp">
+      <Filter>Source files\Device-specific files\Test Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\AppData\Local\VisualGDB\TestFrameworks\com.sysprogs.unittest.CppUTest\src\CppUTestExt\MockExpectedCall.cpp">
+      <Filter>Source files\Device-specific files\Test Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\AppData\Local\VisualGDB\TestFrameworks\com.sysprogs.unittest.CppUTest\src\CppUTestExt\MockExpectedCallsList.cpp">
+      <Filter>Source files\Device-specific files\Test Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\AppData\Local\VisualGDB\TestFrameworks\com.sysprogs.unittest.CppUTest\src\CppUTestExt\MockFailure.cpp">
+      <Filter>Source files\Device-specific files\Test Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\AppData\Local\VisualGDB\TestFrameworks\com.sysprogs.unittest.CppUTest\src\CppUTestExt\MockNamedValue.cpp">
+      <Filter>Source files\Device-specific files\Test Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\AppData\Local\VisualGDB\TestFrameworks\com.sysprogs.unittest.CppUTest\src\CppUTestExt\MockSupport.cpp">
+      <Filter>Source files\Device-specific files\Test Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\AppData\Local\VisualGDB\TestFrameworks\com.sysprogs.unittest.CppUTest\src\CppUTestExt\MockSupport_c.cpp">
+      <Filter>Source files\Device-specific files\Test Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\User\AppData\Local\VisualGDB\TestFrameworks\com.sysprogs.unittest.CppUTest\src\CppUTestExt\MockSupportPlugin.cpp">
+      <Filter>Source files\Device-specific files\Test Framework</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
