@@ -2,14 +2,9 @@
 #include <CppUTest/CommandLineTestRunner.h>
 #include <stdio.h>
 
-/*
-        This is a very basic sample demonstrating the CppUTest framework.
-        Read more about CppUTest syntax here:
-   https://cpputest.github.io/manual.html
-*/
-
-TEST_GROUP(CommunicationTestGroup){TEST_SETUP(){SystemClock_Config();
-CAN_Init(true);
+TEST_GROUP(CommunicationTestGroup){TEST_SETUP(){
+        SystemClock_Config();
+        CAN_Init(true);
 }
 
 TEST_TEARDOWN() {}
