@@ -36,19 +36,10 @@
   <BSPSourceFolderName>Device-specific files</BSPSourceFolderName>
   <MCUMakFile>stm32.mak</MCUMakFile>
   <ReferencedFrameworks>
-    <string>com.sysprogs.arm.stm32.hal</string>
-    <string>com.sysprogs.arm.stm32.ll</string>
     <string>com.sysprogs.embedded.semihosting_and_profiler</string>
   </ReferencedFrameworks>
   <FrameworkProperties>
     <Entries>
-      <KeyValue>
-        <Key>com.sysprogs.stm32.legacy_hal_src</Key>
-        <Value />
-      </KeyValue>
-      <KeyValue>
-        <Key>com.sysprogs.bspoptions.stm32.ll_driver</Key>
-      </KeyValue>
       <KeyValue>
         <Key>com.sysprogs.efp.semihosting.buffer_size</Key>
         <Value>4096</Value>

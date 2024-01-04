@@ -2,9 +2,8 @@
 #include <CppUTest/CommandLineTestRunner.h>
 #include <stdio.h>
 
-TEST_GROUP(CommunicationTestGroup){TEST_SETUP(){
-        SystemClock_Config();
-        CAN_Init(true);
+TEST_GROUP(CommunicationTestGroup){TEST_SETUP(){SystemClock_Config();
+CAN_Init(true);
 }
 
 TEST_TEARDOWN() {}

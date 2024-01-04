@@ -5,7 +5,7 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UTestsForDebug_CAN", "UTestsForDebug_CAN\UTestsForDebug_CAN.vcxproj", "{A7B4EAB0-40B4-4A97-B76B-9B873DC83D28}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UTestsForDebug_CAN_Tests", "UTestsForDebug_CAN_Tests\UTestsForDebug_CAN_Tests.vcxproj", "{1C3C92B0-9855-4696-B027-3C7300D9F3EA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UTestsForDebug_CAN_Tests", "UTestsForDebug_CAN_Tests\UTestsForDebug_CAN_Tests.vcxproj", "{0EB91457-C8C4-458F-8BC9-16A047B0E04A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{A7B4EAB0-40B4-4A97-B76B-9B873DC83D28}.Debug|VisualGDB.Build.0 = Debug|VisualGDB
 		{A7B4EAB0-40B4-4A97-B76B-9B873DC83D28}.Release|VisualGDB.ActiveCfg = Release|VisualGDB
 		{A7B4EAB0-40B4-4A97-B76B-9B873DC83D28}.Release|VisualGDB.Build.0 = Release|VisualGDB
-		{1C3C92B0-9855-4696-B027-3C7300D9F3EA}.Debug|VisualGDB.ActiveCfg = Debug|VisualGDB
-		{1C3C92B0-9855-4696-B027-3C7300D9F3EA}.Debug|VisualGDB.Build.0 = Debug|VisualGDB
-		{1C3C92B0-9855-4696-B027-3C7300D9F3EA}.Release|VisualGDB.ActiveCfg = Release|VisualGDB
-		{1C3C92B0-9855-4696-B027-3C7300D9F3EA}.Release|VisualGDB.Build.0 = Release|VisualGDB
+		{0EB91457-C8C4-458F-8BC9-16A047B0E04A}.Debug|VisualGDB.ActiveCfg = Debug|VisualGDB
+		{0EB91457-C8C4-458F-8BC9-16A047B0E04A}.Debug|VisualGDB.Build.0 = Debug|VisualGDB
+		{0EB91457-C8C4-458F-8BC9-16A047B0E04A}.Release|VisualGDB.ActiveCfg = Release|VisualGDB
+		{0EB91457-C8C4-458F-8BC9-16A047B0E04A}.Release|VisualGDB.Build.0 = Release|VisualGDB
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

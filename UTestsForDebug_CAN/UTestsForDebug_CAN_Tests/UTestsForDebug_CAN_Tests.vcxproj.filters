@@ -2,46 +2,46 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source files">
-      <UniqueIdentifier>{def6f6a1-f7bb-4986-8725-0d584d235e9f}</UniqueIdentifier>
+      <UniqueIdentifier>{5ba385bd-71ec-4fca-9005-52810e24e869}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
     <Filter Include="Header files">
-      <UniqueIdentifier>{320d3305-49ea-4970-8572-2b9cb02035ef}</UniqueIdentifier>
+      <UniqueIdentifier>{ca91b71e-1db2-426f-be41-14f52a5ae57d}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
     <Filter Include="Resource files">
-      <UniqueIdentifier>{64c3baed-20ee-403d-a63f-aaa0898c9d65}</UniqueIdentifier>
+      <UniqueIdentifier>{c0944173-1d69-4105-bfc0-df7b4e07f683}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
     <Filter Include="Source files\Device-specific files">
-      <UniqueIdentifier>{a8341a88-9628-4417-a876-8d210de51b17}</UniqueIdentifier>
+      <UniqueIdentifier>{d9736093-139d-49b0-af40-b58af64c89d8}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source files\Device-specific files\Semihosting/Profiler">
-      <UniqueIdentifier>{aff231ce-aadd-4db9-9a27-41df21dd692e}</UniqueIdentifier>
+      <UniqueIdentifier>{83ebbe0d-d1b2-4c66-a32a-b1ec2a0463fa}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source files\Device-specific files\Test Framework">
-      <UniqueIdentifier>{6c00a557-35ed-4e1b-8cc8-371f05589046}</UniqueIdentifier>
+      <UniqueIdentifier>{08bdcb4b-119b-4ef5-a959-c60b6a0b869b}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header files\Device-specific files">
-      <UniqueIdentifier>{c7fa89ae-0346-45b5-84d4-634537580c10}</UniqueIdentifier>
+      <UniqueIdentifier>{b0a2e2fd-d6d8-4205-a885-63e52ae5db1c}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header files\Device-specific files\Semihosting/Profiler">
-      <UniqueIdentifier>{424306b9-5174-4523-94f8-f9a3eb278c99}</UniqueIdentifier>
+      <UniqueIdentifier>{1e1a0eb7-7021-4a30-87c7-aa4a8ac61a06}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header files\Device-specific files\Test Framework">
-      <UniqueIdentifier>{61283cdd-5130-480d-b571-6022798a1dfe}</UniqueIdentifier>
+      <UniqueIdentifier>{8fbf872b-d7b8-4424-9361-34f07b2f2586}</UniqueIdentifier>
     </Filter>
     <Filter Include="VisualGDB settings">
-      <UniqueIdentifier>{ea4ba28c-ed3b-4ab4-ae8e-470b31303ebb}</UniqueIdentifier>
+      <UniqueIdentifier>{879697cb-89fb-4da5-85e1-c4615f602af1}</UniqueIdentifier>
     </Filter>
     <Filter Include="ProjectSources">
-      <UniqueIdentifier>{67a81e59-cf0f-4b58-a6a4-c2cc339d2a0c}</UniqueIdentifier>
+      <UniqueIdentifier>{4b17cf0c-fe11-4957-8ea3-3a1a8f8edfbb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="UTestsForDebug_CAN_Tests.cpp">
-      <Filter>Source files</Filter>
-    </ClCompile>
+    <None Include="stm32.props">
+      <Filter>Source files\Device-specific files</Filter>
+    </None>
     <ClCompile Include="$(EFP_BASE)\Profiler\FastSemihosting.cpp">
       <Filter>Source files\Device-specific files\Semihosting/Profiler</Filter>
     </ClCompile>
@@ -225,9 +225,8 @@
     <None Include="stm32.xml">
       <Filter>VisualGDB settings</Filter>
     </None>
-    <ClCompile Include="communication_tests.cpp">
-      <Filter>Source files</Filter>
-    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="..\UTestsForDebug_CAN\can_module.cpp">
       <Filter>ProjectSources</Filter>
     </ClCompile>
@@ -241,9 +240,6 @@
       <Filter>ProjectSources</Filter>
     </ClCompile>
     <ClCompile Include="..\UTestsForDebug_CAN\Src\system_stm32f4xx.c">
-      <Filter>ProjectSources</Filter>
-    </ClCompile>
-    <ClCompile Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\StartupFiles\startup_stm32f407xx.c">
       <Filter>ProjectSources</Filter>
     </ClCompile>
     <ClCompile Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c">
@@ -267,102 +263,25 @@
     <ClCompile Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c">
       <Filter>ProjectSources</Filter>
     </ClCompile>
+    <ClCompile Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\StartupFiles\startup_stm32f407xx.c">
+      <Filter>ProjectSources</Filter>
+    </ClCompile>
+    <ClCompile Include="UTestsForDebug_CAN_Tests.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="communication_tests.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\UTestsForDebug_CAN\Inc\main.h">
       <Filter>ProjectSources</Filter>
     </ClInclude>
-    <ClInclude Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\CMSIS_HAL\Include\cmsis_compiler.h">
-      <Filter>Header files\Device-specific files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\CMSIS_HAL\Include\cmsis_gcc.h">
-      <Filter>Header files\Device-specific files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\CMSIS_HAL\Include\cmsis_version.h">
-      <Filter>Header files\Device-specific files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\CMSIS_HAL\Include\core_cm4.h">
-      <Filter>Header files\Device-specific files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\CMSIS_HAL\Include\mpu_armv7.h">
-      <Filter>Header files\Device-specific files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32_assert_template.h">
-      <Filter>Header files\Device-specific files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h">
-      <Filter>Header files\Device-specific files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h">
-      <Filter>Header files\Device-specific files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_can.h">
-      <Filter>Header files\Device-specific files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\Legacy\stm32f4xx_hal_can_legacy.h">
-      <Filter>Header files\Device-specific files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_conf_template.h">
-      <Filter>Header files\Device-specific files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_cortex.h">
-      <Filter>Header files\Device-specific files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h">
-      <Filter>Header files\Device-specific files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma.h">
-      <Filter>Header files\Device-specific files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma_ex.h">
-      <Filter>Header files\Device-specific files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h">
-      <Filter>Header files\Device-specific files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h">
-      <Filter>Header files\Device-specific files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h">
-      <Filter>Header files\Device-specific files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h">
-      <Filter>Header files\Device-specific files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio_ex.h">
-      <Filter>Header files\Device-specific files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c.h">
-      <Filter>Header files\Device-specific files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h">
-      <Filter>Header files\Device-specific files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h">
-      <Filter>Header files\Device-specific files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h">
-      <Filter>Header files\Device-specific files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h">
-      <Filter>Header files\Device-specific files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h">
-      <Filter>Header files\Device-specific files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h">
-      <Filter>Header files\Device-specific files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\CMSIS_HAL\Include\tz_context.h">
-      <Filter>Header files\Device-specific files</Filter>
-    </ClInclude>
     <ClInclude Include="..\UTestsForDebug_CAN\Inc\stm32f4xx_hal_conf.h">
       <Filter>ProjectSources</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="stm32.props">
+    <ClInclude Include="..\UTestsForDebug_CAN\Inc\stm32f4xx_it.h">
       <Filter>ProjectSources</Filter>
-    </None>
+    </ClInclude>
   </ItemGroup>
 </Project>
