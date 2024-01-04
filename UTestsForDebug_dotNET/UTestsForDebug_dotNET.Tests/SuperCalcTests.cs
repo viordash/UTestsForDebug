@@ -1,11 +1,5 @@
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
 namespace UTestsForDebug_dotNET.Tests {
     public class SuperCalcTests {
-        [SetUp]
-        public void Setup() {
-        }
-
         [Test]
         public void GetVeryDifficultCompute_Test() {
             var value = SuperCalc.GetVeryDifficultCompute(0);
