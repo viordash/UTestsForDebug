@@ -261,9 +261,6 @@
     <ClCompile Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c">
       <Filter>Source files\Device-specific files</Filter>
     </ClCompile>
-    <ClCompile Include="system_stm32f4xx.c">
-      <Filter>Source files\Device-specific files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\UTestsForDebug_UART\Inc\main.h">
@@ -297,9 +294,6 @@
       <Filter>Header files\Device-specific files</Filter>
     </ClInclude>
     <ClInclude Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\Legacy\stm32f4xx_hal_uart_legacy.h">
-      <Filter>Header files\Device-specific files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\UTestsForDebug_UART\Inc\stm32f4xx_hal_conf.h">
       <Filter>Header files\Device-specific files</Filter>
     </ClInclude>
     <ClInclude Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_conf_template.h">
@@ -356,6 +350,9 @@
     <ClInclude Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\CMSIS_HAL\Include\tz_context.h">
       <Filter>Header files\Device-specific files</Filter>
     </ClInclude>
+    <ClInclude Include="..\UTestsForDebug_UART\Inc\stm32f4xx_hal_conf.h">
+      <Filter>ProjectSources</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TESTFW_BASE_LOCAL)\com.sysprogs.unittest.CppUTest\src\CppUTestExt\MockActualCall.cpp">
@@ -384,6 +381,9 @@
     </ClCompile>
     <ClCompile Include="UTestsForDebug_UART_Tests.cpp">
       <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\UTestsForDebug_UART\Src\system_stm32f4xx.c">
+      <Filter>ProjectSources</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

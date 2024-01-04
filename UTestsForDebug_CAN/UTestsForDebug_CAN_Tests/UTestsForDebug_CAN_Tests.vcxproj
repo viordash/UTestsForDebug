@@ -74,9 +74,9 @@
     <ClCompile Include="..\UTestsForDebug_CAN\communication.cpp" />
     <ClCompile Include="..\UTestsForDebug_CAN\Src\stm32f4xx_hal_msp.c" />
     <ClCompile Include="..\UTestsForDebug_CAN\Src\stm32f4xx_it.c" />
+    <ClCompile Include="..\UTestsForDebug_CAN\Src\system_stm32f4xx.c" />
     <ClCompile Include="communication_tests.cpp" />
     <ClCompile Include="UTestsForDebug_CAN_Tests.cpp" />
-    <ClCompile Include="system_stm32f4xx.c" />
     <None Include="stm32.props" />
     <ClCompile Include="$(EFP_BASE)\Profiler\FastSemihosting.cpp" />
     <ClCompile Include="$(EFP_BASE)\Profiler\InstrumentingProfiler.cpp" />
