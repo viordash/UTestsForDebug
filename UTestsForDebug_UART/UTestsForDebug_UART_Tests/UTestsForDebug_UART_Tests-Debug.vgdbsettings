@@ -25,7 +25,6 @@
     <ProjectFile>UTestsForDebug_UART_Tests.vcxproj</ProjectFile>
     <RemoteBuildEnvironment>
       <Records />
-      <EnvironmentSetupFiles />
     </RemoteBuildEnvironment>
     <ParallelJobCount>1</ParallelJobCount>
     <SuppressDirectoryChangeMessages>true</SuppressDirectoryChangeMessages>
@@ -55,14 +54,8 @@
     <ExtraSettings>
       <HideErrorsInSystemHeaders>true</HideErrorsInSystemHeaders>
       <SupportLightweightReferenceAnalysis>true</SupportLightweightReferenceAnalysis>
-      <DiscoverySettings>
-        <Mode>Enabled</Mode>
-        <SearchInProjectDir>true</SearchInProjectDir>
-        <SearchInSourceDirs>true</SearchInSourceDirs>
-        <SearchInIncludeSubdirs>true</SearchInIncludeSubdirs>
-      </DiscoverySettings>
       <CheckForClangFormatFiles>true</CheckForClangFormatFiles>
-      <FormattingEngine>ClangFormat</FormattingEngine>
+      <FormattingEngine xsi:nil="true" />
     </ExtraSettings>
     <CodeAnalyzerSettings>
       <Enabled>false</Enabled>

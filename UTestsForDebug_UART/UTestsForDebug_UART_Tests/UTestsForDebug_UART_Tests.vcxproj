@@ -12,7 +12,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{1C3C92B0-9855-4696-B027-3C7300D9F3EA}</ProjectGuid>
+    <ProjectGuid>{C6A728C4-C3B5-476C-BB4D-EC9EFB727908}</ProjectGuid>
     <BSP_ID>com.sysprogs.arm.stm32</BSP_ID>
     <BSP_VERSION>2023.07</BSP_VERSION>
     <InPlaceBSPSubdir />
@@ -42,18 +42,14 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
     <ClCompile>
-      <AdditionalIncludeDirectories>../UTestsForDebug_UART/Inc;C:/Users/User/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.stm32/2023.07/STM32F4xxxx/BSP/STM32F4-Discovery;../UTestsForDebug_UART/BSP/STM32F4xxxx/BSP/STM32F4-Discovery;../UTestsForDebug_UART/BSP/STM32F4xxxx/CMSIS_HAL/Device/ST/STM32F4xx/Include;../UTestsForDebug_UART/BSP/STM32F4xxxx/CMSIS_HAL/Include;../UTestsForDebug_UART/BSP/STM32F4xxxx/STM32F4xx_HAL_Driver/Inc;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>DEBUG=1;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalOptions />
-      <CLanguageStandard />
-      <CPPLanguageStandard />
+      <AdditionalIncludeDirectories>../UTestsForDebug_UART/BSP/STM32F4xxxx/BSP/STM32F4-Discovery;../UTestsForDebug_UART/Inc;../UTestsForDebug_UART/Src;../UTestsForDebug_UART/BSP/STM32F4xxxx/CMSIS_HAL/Device/ST/STM32F4xx/Include;../UTestsForDebug_UART/BSP/STM32F4xxxx/CMSIS_HAL/Include;../UTestsForDebug_UART/BSP/STM32F4xxxx/STM32F4xx_HAL_Driver/Inc;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEBUG=1;STM32F407VG;STM32F407xx;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
+      <AdditionalLinkerInputs>;%(Link.AdditionalLinkerInputs)</AdditionalLinkerInputs>
       <LibrarySearchDirectories>;%(Link.LibrarySearchDirectories)</LibrarySearchDirectories>
       <AdditionalLibraryNames>;%(Link.AdditionalLibraryNames)</AdditionalLibraryNames>
-      <AdditionalLinkerInputs>;%(Link.AdditionalLinkerInputs)</AdditionalLinkerInputs>
       <LinkerScript>../UTestsForDebug_UART/BSP/STM32F4xxxx/LinkerScripts/STM32F407VG_flash.lds</LinkerScript>
-      <AdditionalOptions />
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -64,15 +60,16 @@
   <ItemGroup>
     <ClCompile Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\StartupFiles\startup_stm32f407xx.c" />
     <ClCompile Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c" />
-    <ClCompile Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.c" />
     <ClCompile Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c" />
     <ClCompile Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c" />
     <ClCompile Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c" />
     <ClCompile Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c.c" />
     <ClCompile Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c" />
+    <ClCompile Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.c" />
     <ClCompile Include="..\UTestsForDebug_UART\communication.cpp" />
     <ClCompile Include="..\UTestsForDebug_UART\Src\stm32f4xx_hal_msp.c" />
     <ClCompile Include="..\UTestsForDebug_UART\Src\stm32f4xx_it.c" />
+    <ClCompile Include="..\UTestsForDebug_UART\Src\system_stm32f4xx.c" />
     <ClCompile Include="$(TESTFW_BASE_LOCAL)\com.sysprogs.unittest.CppUTest\src\CppUTestExt\MockActualCall.cpp" />
     <ClCompile Include="$(TESTFW_BASE_LOCAL)\com.sysprogs.unittest.CppUTest\src\CppUTestExt\MockExpectedCall.cpp" />
     <ClCompile Include="$(TESTFW_BASE_LOCAL)\com.sysprogs.unittest.CppUTest\src\CppUTestExt\MockExpectedCallsList.cpp" />
@@ -81,9 +78,11 @@
     <ClCompile Include="$(TESTFW_BASE_LOCAL)\com.sysprogs.unittest.CppUTest\src\CppUTestExt\MockSupport.cpp" />
     <ClCompile Include="$(TESTFW_BASE_LOCAL)\com.sysprogs.unittest.CppUTest\src\CppUTestExt\MockSupportPlugin.cpp" />
     <ClCompile Include="$(TESTFW_BASE_LOCAL)\com.sysprogs.unittest.CppUTest\src\CppUTestExt\MockSupport_c.cpp" />
-    <ClCompile Include="..\UTestsForDebug_UART\Src\system_stm32f4xx.c" />
     <ClCompile Include="communication_tests.cpp" />
     <ClCompile Include="UTestsForDebug_UART_Tests.cpp" />
+    <ClInclude Include="..\UTestsForDebug_UART\Inc\main.h" />
+    <ClInclude Include="..\UTestsForDebug_UART\Inc\stm32f4xx_hal_conf.h" />
+    <ClInclude Include="..\UTestsForDebug_UART\Inc\stm32f4xx_it.h" />
     <None Include="stm32.props" />
     <ClCompile Include="$(EFP_BASE)\Profiler\FastSemihosting.cpp" />
     <ClCompile Include="$(EFP_BASE)\Profiler\InstrumentingProfiler.cpp" />
@@ -109,36 +108,6 @@
     <ClCompile Include="$(TESTFW_BASE_LOCAL)\com.sysprogs.unittest.CppUTest\src\CppUTest\Utest.cpp" />
     <ClCompile Include="$(TESTFW_BASE_LOCAL)\com.sysprogs.unittest.CppUTest\Platforms\SysprogsTestHooks.cpp" />
     <ClCompile Include="$(TESTFW_BASE_LOCAL)\com.sysprogs.unittest.CppUTest\Platforms\Embedded\UtestPlatformEmbedded.cpp" />
-    <ClInclude Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\CMSIS_HAL\Include\cmsis_compiler.h" />
-    <ClInclude Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\CMSIS_HAL\Include\cmsis_gcc.h" />
-    <ClInclude Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\CMSIS_HAL\Include\cmsis_version.h" />
-    <ClInclude Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\CMSIS_HAL\Include\core_cm4.h" />
-    <ClInclude Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\CMSIS_HAL\Include\mpu_armv7.h" />
-    <ClInclude Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\CMSIS_HAL\Include\tz_context.h" />
-    <ClInclude Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\Legacy\stm32f4xx_hal_uart_legacy.h" />
-    <ClInclude Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h" />
-    <ClInclude Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h" />
-    <ClInclude Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h" />
-    <ClInclude Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_conf_template.h" />
-    <ClInclude Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_cortex.h" />
-    <ClInclude Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h" />
-    <ClInclude Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma.h" />
-    <ClInclude Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma_ex.h" />
-    <ClInclude Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h" />
-    <ClInclude Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h" />
-    <ClInclude Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h" />
-    <ClInclude Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h" />
-    <ClInclude Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio_ex.h" />
-    <ClInclude Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c.h" />
-    <ClInclude Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h" />
-    <ClInclude Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h" />
-    <ClInclude Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h" />
-    <ClInclude Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h" />
-    <ClInclude Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h" />
-    <ClInclude Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h" />
-    <ClInclude Include="..\UTestsForDebug_UART\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32_assert_template.h" />
-    <ClInclude Include="..\UTestsForDebug_UART\Inc\main.h" />
-    <ClInclude Include="..\UTestsForDebug_UART\Inc\stm32f4xx_hal_conf.h" />
     <ClInclude Include="$(EFP_BASE)\Profiler\SysprogsProfiler.h" />
     <ClInclude Include="$(EFP_BASE)\Profiler\SmallNumberCoder.h" />
     <ClInclude Include="$(EFP_BASE)\Profiler\SysprogsProfilerInterface.h" />

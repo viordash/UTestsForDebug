@@ -5,19 +5,11 @@
 #include "main.h"
 #include <stdio.h>
 
-TEST_GROUP(CommunicationTestGroup){TEST_SETUP(){ SystemClock_Config(); }
+TEST_GROUP(CommunicationTestGroup){TEST_SETUP(){SystemClock_Config();
+}
 TEST_TEARDOWN() { mock().clear(); }
 }
 ;
-
-static Led_TypeDef led_On;
-void BSP_LED_On(Led_TypeDef Led) { led_On = Led; }
-
-static Led_TypeDef led_Off;
-void BSP_LED_Off(Led_TypeDef Led) { led_Off = Led; }
-
-static Led_TypeDef led_Toggle;
-void BSP_LED_Toggle(Led_TypeDef Led) { led_Toggle = Led; }
 
 TEST(CommunicationTestGroup, Debug_VeryDifficult_Case) {
   TCommandId id;
@@ -34,17 +26,16 @@ TEST(CommunicationTestGroup, Debug_VeryDifficult_Case) {
       .withParameter("id", TCommandId::cmd_Start)
       .withParameter("status", 0);
 
-  Comm_ProcessMessages();
+  mock().expectOneCall("BSP_LED_On").withParameter("Led", LED6);
+  mock().expectOneCall("BSP_LED_Off").withParameter("Led", LED4);
+  mock().expectOneCall("BSP_LED_Off").withParameter("Led", LED5);
 
-  CHECK_EQUAL_TEXT(LED6, led_On,
-                   "Perform_Command_VeryDifficult was not called");
-  CHECK_EQUAL_TEXT(LED5, led_Off,
-                   "Perform_Command_VeryDifficult was not called");
+  Comm_ProcessMessages();
 
   mock().checkExpectations();
 }
 
-/* mocking uart module*/
+/* mocking work module*/
 
 void UART_Init() { mock().actualCall("UART_Init"); }
 
@@ -67,4 +58,16 @@ bool UART_HandleReceivingCommands(TCommandId *id, uint8_t *status,
       .actualCall("UART_HandleReceivingCommands")
       .withOutputParameter("id", id)
       .returnBoolValue();
+}
+
+void BSP_LED_On(Led_TypeDef Led) {
+  mock().actualCall("BSP_LED_On").withIntParameter("Led", Led);
+}
+
+void BSP_LED_Off(Led_TypeDef Led) {
+  mock().actualCall("BSP_LED_Off").withIntParameter("Led", Led);
+}
+
+void BSP_LED_Toggle(Led_TypeDef Led) {
+  mock().actualCall("BSP_LED_Toggle").withIntParameter("Led", Led);
 }
