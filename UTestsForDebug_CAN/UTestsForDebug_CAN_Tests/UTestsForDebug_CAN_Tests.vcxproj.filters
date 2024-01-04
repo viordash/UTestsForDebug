@@ -42,9 +42,6 @@
     <ClCompile Include="UTestsForDebug_CAN_Tests.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
-    <None Include="stm32.props">
-      <Filter>Source files\Device-specific files</Filter>
-    </None>
     <ClCompile Include="$(EFP_BASE)\Profiler\FastSemihosting.cpp">
       <Filter>Source files\Device-specific files\Semihosting/Profiler</Filter>
     </ClCompile>
@@ -243,31 +240,31 @@
     <ClCompile Include="..\UTestsForDebug_CAN\Src\stm32f4xx_it.c">
       <Filter>ProjectSources</Filter>
     </ClCompile>
+    <ClCompile Include="..\UTestsForDebug_CAN\Src\system_stm32f4xx.c">
+      <Filter>ProjectSources</Filter>
+    </ClCompile>
     <ClCompile Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\StartupFiles\startup_stm32f407xx.c">
-      <Filter>Source files\Device-specific files</Filter>
+      <Filter>ProjectSources</Filter>
     </ClCompile>
     <ClCompile Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c">
-      <Filter>Source files\Device-specific files</Filter>
+      <Filter>ProjectSources</Filter>
     </ClCompile>
     <ClCompile Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_can.c">
-      <Filter>Source files\Device-specific files</Filter>
+      <Filter>ProjectSources</Filter>
     </ClCompile>
     <ClCompile Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c">
-      <Filter>Source files\Device-specific files</Filter>
+      <Filter>ProjectSources</Filter>
     </ClCompile>
     <ClCompile Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c">
-      <Filter>Source files\Device-specific files</Filter>
+      <Filter>ProjectSources</Filter>
     </ClCompile>
     <ClCompile Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c">
-      <Filter>Source files\Device-specific files</Filter>
+      <Filter>ProjectSources</Filter>
     </ClCompile>
     <ClCompile Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c.c">
-      <Filter>Source files\Device-specific files</Filter>
+      <Filter>ProjectSources</Filter>
     </ClCompile>
     <ClCompile Include="..\UTestsForDebug_CAN\BSP\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c">
-      <Filter>Source files\Device-specific files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\UTestsForDebug_CAN\Src\system_stm32f4xx.c">
       <Filter>ProjectSources</Filter>
     </ClCompile>
   </ItemGroup>
@@ -362,5 +359,10 @@
     <ClInclude Include="..\UTestsForDebug_CAN\Inc\stm32f4xx_hal_conf.h">
       <Filter>ProjectSources</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="stm32.props">
+      <Filter>ProjectSources</Filter>
+    </None>
   </ItemGroup>
 </Project>
